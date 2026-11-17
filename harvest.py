@@ -11,6 +11,7 @@ pyalex.config.api_key = os.getenv("OPENALEX_API_KEY")
 if not pyalex.config.api_key:
     raise ValueError("Must set the OPENALEX_API_KEY environment variable")
 
+
 def reconstruct_abstract(inverted_index: dict) -> str:
     """
     OpenAlex returns abstracts as an inverted index to save space.
