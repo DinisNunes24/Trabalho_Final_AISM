@@ -89,7 +89,7 @@ def suggest_related_topics(query: str, max_suggestions: int = 8):
     return [nome for _, nome in unique[:max_suggestions]]
 
 
-def fetch_papers(query: str, output_file: str = "papers_dataset.json", per_page: int = 20):
+def fetch_papers(query: str, output_file: str = "papers_dataset.json", per_page: int = 20, max_results: int = 20):
     print(f"\n A pesquisar no OpenAlex: '{query}'...")
 
     pager = (
@@ -103,7 +103,7 @@ def fetch_papers(query: str, output_file: str = "papers_dataset.json", per_page:
             "abstract_inverted_index",
             "doi",
             "keywords",
-            "primary_topic",   # útil para análise posterior
+            "primary_topic",
         ])
         .paginate(per_page=per_page)
     )
@@ -153,13 +153,21 @@ def fetch_papers(query: str, output_file: str = "papers_dataset.json", per_page:
                     "has_abstract": bool(abstract_text.strip()),
                     "abstract": abstract_text,
                 })
+
+                # Limite de artigos
+                if len(dataset) >= max_results:
+                    break
+
+            if len(dataset) >= max_results:
+                break
+
     finally:
         if dataset:
             with open(output_file, "w", encoding="utf-8") as f:
                 json.dump(dataset, f, indent=4, ensure_ascii=False)
             print(f"\n Guardados {len(dataset)} registos em '{output_file}'.")
 
-            # Mostrar as keywords mais frequentes nos resultados (outra forma de sugerir temas)
+            # Mostrar as keywords mais frequentes nos resultados
             if all_keywords:
                 print("\n Keywords mais frequentes nos resultados:")
                 for kw, count in Counter(all_keywords).most_common(8):
@@ -195,9 +203,9 @@ if __name__ == "__main__":
                 query = related[idx]
                 print(f"\n→ Tema alterado para: '{query}'")
 
-    # 4. Definir nome do ficheiro de saída (opcional)
+    # 4. Definir nome do ficheiro de saída
     safe_name = "".join(c if c.isalnum() or c in " _-" else "_" for c in query)[:50]
     output_file = f"papers_{safe_name.strip().replace(' ', '_')}.json"
 
-    # 5. Executar a pesquisa
-    fetch_papers(query=query, output_file=output_file, per_page=25)
+    # 5. Executar a pesquisa (limitada a 20 artigos)
+    fetch_papers(query=query, output_file=output_file, per_page=20, max_results=20)
