@@ -6,14 +6,13 @@ import pyalex
 from pyalex import Works, Topics, Keywords
 from dotenv import load_dotenv
 
-# Configuração
+
 pyalex.config.email = "240000642@esg.ipsantarem.pt"
 load_dotenv()
 pyalex.config.api_key = os.getenv("OPENALEX_API_KEY")
 
 if not pyalex.config.api_key:
     raise ValueError("Must set the OPENALEX_API_KEY environment variable")
-
 
 def reconstruct_abstract(inverted_index: dict | None) -> str:
     """Reconstrói o abstract a partir do inverted index do OpenAlex."""
@@ -43,82 +42,168 @@ def reconstruct_abstract(inverted_index: dict | None) -> str:
     return " ".join(w for w in words if w)
 
 
-def suggest_related_topics(query: str, max_suggestions: int = 8):
+def suggest_related_topics(query: str, max_suggestions: int = 8) -> list[str]:
     """
     Sugere temas relacionados usando Topics e Keywords do OpenAlex.
+    Devolve apenas a lista de nomes (sem imprimir).
     """
-    print(f"\n A procurar temas relacionados com: '{query}'...")
     suggestions = []
 
-    # 1. Procurar Topics relacionados
+    # 1. Topics
     try:
         topics = Topics().search(query).get(per_page=5)
         for t in topics:
             name = t.get("display_name")
             if name:
-                suggestions.append(("Topic", name))
+                suggestions.append(name)
     except Exception as e:
         print(f"   (Aviso: não foi possível obter Topics: {e})")
 
-    # 2. Procurar Keywords relacionadas
+    # 2. Keywords
     try:
         keywords = Keywords().search(query).get(per_page=5)
         for k in keywords:
             name = k.get("display_name")
             if name:
-                suggestions.append(("Keyword", name))
+                suggestions.append(name)
     except Exception as e:
         print(f"   (Aviso: não foi possível obter Keywords: {e})")
 
     # Remover duplicados mantendo a ordem
     seen = set()
     unique = []
-    for tipo, nome in suggestions:
+    for nome in suggestions:
         chave = nome.lower()
         if chave not in seen:
             seen.add(chave)
-            unique.append((tipo, nome))
+            unique.append(nome)
 
-    if unique:
-        print("\n Temas relacionados sugeridos:")
-        for i, (tipo, nome) in enumerate(unique[:max_suggestions], 1):
-            print(f"   {i}. [{tipo}] {nome}")
-    else:
-        print("   Não foram encontrados temas relacionados.")
-
-    return [nome for _, nome in unique[:max_suggestions]]
+    return unique[:max_suggestions]
 
 
-def choose_topic() -> str | None:
+def choose_topic_stack() -> list[str] | None:
     """
-    Pede um tema ao utilizador e opcionalmente permite escolher um tema sugerido.
+    Permite ao utilizador construir, editar e confirmar uma stack de temas.
+    Só devolve a lista quando o utilizador escolhe 'search'.
     """
+    topics: list[str] = []
+
     print("=" * 60)
-    print("  Seleção de tema")
+    print("  Construtor de stack de temas")
     print("=" * 60)
+    print("""
+Comandos disponíveis:
+  add <texto>          -> adiciona um tema livre
+  suggest <texto>      -> obtém sugestões do OpenAlex e escolhe uma
+  remove <n>           -> remove o tema número n
+  clear                -> limpa toda a stack
+  show                 -> mostra a stack actual
+  search               -> confirma e pesquisa no OpenAlex
+  quit / q             -> sair sem pesquisar
+""")
 
-    query = input("\nDigite o tema que pretende pesquisar: ").strip()
-    if not query:
-        return None
+    while True:
+        print("\nStack actual:", topics if topics else "(vazia)")
+        raw = input("> ").strip()
+        if not raw:
+            continue
 
-    related = suggest_related_topics(query)
+        parts = raw.split(maxsplit=1)
+        cmd = parts[0].lower()
+        arg = parts[1].strip() if len(parts) > 1 else ""
 
-    if related:
-        print("\nQuer usar um dos temas sugeridos em vez do original?")
-        print("   (pressione Enter para manter o tema original)")
-        escolha = input("   Número do tema (ou Enter): ").strip()
+        #add 
+        if cmd == "add":
+            if not arg:
+                print("Uso: add <texto do tema>")
+                continue
+            if arg.lower() in (t.lower() for t in topics):
+                print(f"  '{arg}' já está na stack.")
+            else:
+                topics.append(arg)
+                print(f"  + Adicionado: '{arg}'")
 
-        if escolha.isdigit():
-            idx = int(escolha) - 1
-            if 0 <= idx < len(related):
-                query = related[idx]
-                print(f"\n→ Tema alterado para: '{query}'")
+        # suggest 
+        elif cmd == "suggest":
+            if not arg:
+                print("Uso: suggest <texto>")
+                continue
 
-    return query
+            print(f"\n A procurar sugestões para: '{arg}'...")
+            suggestions = suggest_related_topics(arg)
+
+            if not suggestions:
+                print("   Nenhuma sugestão encontrada.")
+                continue
+
+            print("\n Sugestões:")
+            for i, nome in enumerate(suggestions, 1):
+                print(f"   {i}. {nome}")
+
+            escolha = input("\nNúmero da sugestão a adicionar (ou Enter para cancelar): ").strip()
+            if escolha.isdigit():
+                idx = int(escolha) - 1
+                if 0 <= idx < len(suggestions):
+                    escolhido = suggestions[idx]
+                    if escolhido.lower() in (t.lower() for t in topics):
+                        print(f"  '{escolhido}' já está na stack.")
+                    else:
+                        topics.append(escolhido)
+                        print(f"  + Adicionado: '{escolhido}'")
+                else:
+                    print("  Número inválido.")
+            else:
+                print("  Sugestão cancelada.")
+
+        # remove
+        elif cmd == "remove":
+            if not arg:
+                print("Uso: remove <número>")
+                continue
+            try:
+                idx = int(arg) - 1
+                if 0 <= idx < len(topics):
+                    removed = topics.pop(idx)
+                    print(f"  - Removido: '{removed}'")
+                else:
+                    print("  Número fora do intervalo.")
+            except ValueError:
+                print("  Número inválido.")
+
+        # clear
+        elif cmd == "clear":
+            topics.clear()
+            print("  Stack limpa.")
+
+        # show 
+        elif cmd == "show":
+            if not topics:
+                print("  (vazia)")
+            else:
+                for i, t in enumerate(topics, 1):
+                    print(f"  {i}. {t}")
+
+        #search (confirmação) 
+        elif cmd == "search":
+            if not topics:
+                print("  A stack está vazia. Adicione pelo menos um tema.")
+                continue
+            print(f"\n→ A pesquisar com a stack: {topics}")
+            return topics
+
+        # quit
+        elif cmd in ("quit", "q", "exit"):
+            print("  A sair sem pesquisar.")
+            return None
+
+        else:
+            print("  Comando desconhecido. Tente: add, suggest, remove, clear, show, search, quit")
 
 
-def fetch_papers(query: str, output_file: str = "papers_dataset.json",
-                 per_page: int = 20, max_results: int = 20):
+def fetch_papers(query: str,
+                 output_file: str = "papers_dataset.json",
+                 per_page: int = 20,
+                 max_results: int = 20):
     print(f"\n A pesquisar no OpenAlex: '{query}'...")
 
     pager = (
@@ -142,7 +227,7 @@ def fetch_papers(query: str, output_file: str = "papers_dataset.json",
 
     try:
         for page_num, page in enumerate(pager, start=1):
-            print(f" ({len(page)} registos)")
+            print(f"  Página {page_num}: {len(page)} registos")
 
             for work in page:
                 # Autores
@@ -204,15 +289,25 @@ def fetch_papers(query: str, output_file: str = "papers_dataset.json",
 
 
 if __name__ == "__main__":
-    topic = choose_topic()
+    topics = choose_topic_stack()
 
-    if not topic:
-        print("Nenhum tema introduzido. A terminar.")
+    if not topics:
+        print("Nenhum tema confirmado. A terminar.")
     else:
-        # Guardar o tema usado para o summary.py poder lê-lo automaticamente
-        with open("last_topic.txt", "w", encoding="utf-8") as f:
-            f.write(topic)
+        # Guardar a stack completa (útil para scripts posteriores)
+        with open("last_topics.json", "w", encoding="utf-8") as f:
+            json.dump(topics, f, ensure_ascii=False, indent=2)
 
-        # Sempre grava no mesmo ficheiro fixo
-        fetch_papers(query=topic, output_file="papers_dataset.json",
-                     per_page=20, max_results=20)
+        # Também guardar uma string simples (compatibilidade com código antigo)
+        with open("last_topic.txt", "w", encoding="utf-8") as f:
+            f.write(" | ".join(topics))
+
+        # Combinar os temas com AND (pode mudar para OR se preferir)
+        combined_query = " AND ".join(f'"{t}"' for t in topics)
+
+        fetch_papers(
+            query=combined_query,
+            output_file="papers_dataset.json",
+            per_page=20,
+            max_results=20
+        )

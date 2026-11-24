@@ -2,9 +2,22 @@ import json
 import os
 from ollama import Client
 
-from harvest import choose_topic
+from harvest import choose_topic_stack
 
 client = Client(host="http://localhost:11434")
+
+
+def _normalize_topic(topic) -> str | None:
+    """Garante que o tema é sempre uma string legível."""
+    if topic is None:
+        return None
+    if isinstance(topic, list):
+        # junta com " | " para manter legibilidade no prompt
+        cleaned = [t.strip() for t in topic if t and t.strip()]
+        return " | ".join(cleaned) if cleaned else None
+    if isinstance(topic, str):
+        return topic.strip() or None
+    return str(topic)
 
 
 def _build_prompt(paper: dict, topic: str) -> str:
@@ -37,20 +50,29 @@ ABSTRACT:
 
 
 def evaluate_papers(
-    topic: str | None = None,
+    topic: str | list[str] | None = None,
     input_file: str = "papers_dataset.json",
     output_file: str = "evaluated_dataset.json",
     model_name: str = "gemma3:4b",
     save_every: int = 25,
 ):
-    # Tentar obter o tema automaticamente do ficheiro criado pelo harvest.py
+    # 1. Tentar obter o tema automaticamente
     if not topic:
-        if os.path.exists("last_topic.txt"):
+        # Preferir o ficheiro JSON da stack (mais fiável)
+        if os.path.exists("last_topics.json"):
+            with open("last_topics.json", "r", encoding="utf-8") as f:
+                topic = json.load(f)
+            print(f"Temas detetados automaticamente (stack): {topic}")
+        elif os.path.exists("last_topic.txt"):
             with open("last_topic.txt", "r", encoding="utf-8") as f:
                 topic = f.read().strip()
             print(f"Tema detetado automaticamente: '{topic}'")
         else:
-            topic = choose_topic()  # só pergunta se não existir o ficheiro
+            # Só pergunta se não existir nenhum ficheiro
+            topic = choose_topic_stack()
+
+    # 2. Normalizar para string
+    topic = _normalize_topic(topic)
 
     if not topic:
         print("Nenhum tema selecionado. A terminar.")
