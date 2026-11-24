@@ -1,0 +1,459 @@
+[
+    {
+        "id": "https://openalex.org/W4315751097",
+        "doi": "https://doi.org/10.57952/t5qw-j380",
+        "title": "Cibersecurity",
+        "year": 2022,
+        "authors": [
+            "Oficina C"
+        ],
+        "keywords": [
+            "cybersecurity",
+            "Spain",
+            "cybersecurity governance",
+            "cybersecurity training",
+            "emerging technologies",
+            "artificial intelligence",
+            "quantum computing",
+            "national security",
+            "fundamental rights",
+            "cyber threats"
+        ],
+        "primary_topic": "Cybersecurity and Cyber Warfare Studies",
+        "has_abstract": true,
+        "abstract": "Spain in a constantly evolving technological and social ecosystem Cybersecurity has become a social necessity as it is an issue that has effects beyond the technological field. From the economy or national security to defending fundamental rights and public freedom, all spheres are at risk in cyberspace. In addition to technology, cybersecurity includes people, the processes that connect them and their governance, as well as the data they generate, share and store. Spain has developed significant cybersecurity capabilities. However, the constant evolution of technology and threats leads to substantial challenges for training and collaboration in the national network, equal access to cybersecurity, and management of the disruption associated with emerging technologies such as artificial intelligence or quantum computing."
+    },
+    {
+        "id": "https://openalex.org/W4404036216",
+        "doi": "https://doi.org/10.1109/argencon62399.2024.10735950",
+        "title": "Cibersecurity and Academia",
+        "year": 2024,
+        "authors": [
+            "J.M. Heguiabehere",
+            "Marcela Pallero"
+        ],
+        "keywords": [
+            "cybersecurity",
+            "academia",
+            "cybersecurity education",
+            "graduate courses",
+            "cyber incidents",
+            "COVID-19 pandemic"
+        ],
+        "primary_topic": "Information Systems Education and Curriculum Development",
+        "has_abstract": true,
+        "abstract": "In the last few years and especially since the COVID-19 pandemic, computerization of daily life has increased, and with it cybersecurity incidents have also incremented in number. In this work, we intend to survey the skills required by IT and telecommunications professionals, the work that has been done in other places, and the offer available in the field in graduate courses in the country."
+    },
+    {
+        "id": "https://openalex.org/W7214755695",
+        "doi": "https://doi.org/10.5281/zenodo.23040594",
+        "title": "Cibersecurity Data from students",
+        "year": 2026,
+        "authors": [
+            "Centro de Educación en Virtudes y Valores"
+        ],
+        "keywords": [
+            "cybersecurity",
+            "students",
+            "cybersecurity awareness"
+        ],
+        "primary_topic": "Information and Cyber Security",
+        "has_abstract": false,
+        "abstract": ""
+    },
+    {
+        "id": "https://openalex.org/W7216984059",
+        "doi": null,
+        "title": "ESFORSFT in the digital age. ICT & Cibersecurity",
+        "year": 2024,
+        "authors": [
+            "Luis Germánico Calero Bonilla",
+            "Silver Bolívar Jiménez Villacís",
+            "Odalis Belén Camino Cordero",
+            "Diego Santiago Andrade Naranjo",
+            "Carlos Enrique Proaño Rodríguez"
+        ],
+        "keywords": [
+            "information and communication technologies",
+            "cybersecurity",
+            "military education",
+            "soldier training",
+            "Microsoft Office",
+            "educational platforms",
+            "search engines",
+            "cyber threats",
+            "military institutions",
+            "digital literacy"
+        ],
+        "primary_topic": "Information and Cyber Security",
+        "has_abstract": true,
+        "abstract": "We live in a time when technology is at our fingertips, making information just a click away; Information and Communication Technologies have become essential tools for transforming education, providing us with dynamic resources that foster a multidisciplinary approach to learning. This is the inspiration behind the book “Esforsft in the Digital Age: ICT and Cybersecurity,” which aims to support the Escuela de Formación de Soldados “Vencedores del Cenepa” by offering materials that integrate new technologies into the training and education of future soldiers in the Army. The book is crafted to give military personnel straightforward guidance on using Microsoft Office tools, as well as various educational platforms, browsers, and search engines. It even includes a chapter dedicated to identifying and analyzing cybersecurity threats and vulnerabilities within military institutions."
+    },
+    {
+        "id": "https://openalex.org/W7104011420",
+        "doi": "https://doi.org/10.25062/9786287818064.01",
+        "title": "Definition and Impact of Digital Transformation and Cibersecurity",
+        "year": 2025,
+        "authors": [
+            "Lucas Adolfo Giraldo Ríos"
+        ],
+        "keywords": [
+            "digital transformation",
+            "cybersecurity",
+            "strategic forecasting",
+            "foresight",
+            "scenario planning",
+            "emerging trends",
+            "cybersecurity awareness",
+            "organizational culture",
+            "information security",
+            "organizational resilience",
+            "cyber threats"
+        ],
+        "primary_topic": "Information and Cyber Security",
+        "has_abstract": true,
+        "abstract": "This chapter discusses strategic forecasting and foresight. The former involves anticipating plausible future scenarios, while the latter identifies emerging trends. It highlights the need for strategies that promote cybersecurity awareness for a solid organizational culture in information security. It concludes that promoting this culture strengthens organizational resilience to cyber threats."
+    },
+    {
+        "id": "https://openalex.org/W1859528836",
+        "doi": null,
+        "title": "National cibersecurity strategies : Australia and Canada",
+        "year": 2015,
+        "authors": [
+            "João Manuel Assis Barbas"
+        ],
+        "keywords": [
+            "national cybersecurity strategy",
+            "cybersecurity policy",
+            "Australia",
+            "Canada",
+            "comparative policy analysis",
+            "information security"
+        ],
+        "primary_topic": "Cybersecurity and Cyber Warfare Studies",
+        "has_abstract": false,
+        "abstract": ""
+    },
+    {
+        "id": "https://openalex.org/W7120291221",
+        "doi": null,
+        "title": "Cibersecurity in Brazil: an analysis of its developments through securitization",
+        "year": 2020,
+        "authors": [
+            "Raquel Torrecilha [UNESP] Spiri"
+        ],
+        "keywords": [
+            "cybersecurity",
+            "securitization",
+            "Copenhagen School",
+            "national defense strategy",
+            "Brazilian Armed Forces",
+            "cyberspace",
+            "cyber threats",
+            "information and communication technologies",
+            "Brazil",
+            "international security theory",
+            "national security discourse",
+            "cyberterrorism",
+            "cybercrime",
+            "cyber espionage",
+            "cybercrime investigation",
+            "cybercrime prosecution"
+        ],
+        "primary_topic": "Cybersecurity and Cyber Warfare Studies",
+        "has_abstract": true,
+        "abstract": "Tema recente na esfera da Segurança Internacional, a segurança cibernética ganhou espaço em discussões em nível governamental a partir da popularização das Novas Tecnologias da Informação e Comunicação. Parte-se do entendimento que a difusão da Internet passou a apresentar ameaças em âmbito do chamado ciberespaço e que podem caracterizar um problema à segurança de um Estado. Ao que se refere à atuação do Brasil no ciberespaço, o Ministério da Defesa, no ano de 2008, elaborou diretrizes para lidar com novas ameaças engendradas pela transição do século XX ao XXI, entre elas, questões envolvendo a área cibernética, através da publicação da Estratégia Nacional de Defesa. A partir de tal documento, tutelou-se às Forças Armadas, especificamente ao Exército Brasileiro, a segurança do espaço cibernético do Brasil. Considerando a teoria de Segurança Internacional desenvolvida pela Escola de Copenhague e seus principais expoentes, Barry Buzan, Ole Wæver e Jaap de Wilde, entende-se que é possível traçar maneiras de compreender o processo de segurança cibernética ocorrido no Brasil. No livro publicado em 1997, Security: A New Framework for Analysis, os três autores apresentaram o conceito de Securitização, ideia de que uma questão pode ser tratada como matéria de segurança desde que haja um agente securitizador que, através do discurso, atribui caráter emergencial a ela e toma medidas para protegê-la. Dessa forma, objetiva-se testar, sob a ótica Securitização da Escola de Copenhague, a hipótese de que o Brasil, através da Estratégia Nacional de Defesa, buscou securitizar seu espaço cibernético, outrossim, procurando compreender os desdobramentos de uma política de proteção do setor cibernético, em particular ao que se refere aos recursos dispendidos com a cibersegurança no país desde a criação do Centro de Defesa Cibernético, em 2010. O trabalho faz uso de bibliografia pertinente ao assunto, pautada sobre os trabalhos desenvolvidos pela Escola de Copenhague bem como documentos disponibilizados pelo governo brasileiro. No que se refere aos resultados alcançados, concluímos que o Brasil securitizou seu espaço cibernético em três fases entre 2002 e 2018: na primeira, promoveu-se o discurso de segurança cibernética no governo; na segunda, tomou-se medidas emergenciais; e, na terceira, consolidou e ampliou-se a atuação das Forças Armadas na cibersegurança no Brasil."
+    },
+    {
+        "id": "https://openalex.org/W3165730211",
+        "doi": "https://doi.org/10.6036/10022",
+        "title": "CIBERSECURITY ON INTERNET OF ROBOTICS THINGS: EXPERIMENTAL PLATFORM",
+        "year": 2021,
+        "authors": [
+            "Luis Alberto Flores Montaño",
+            "Juan Carlos Herrera Lozada",
+            "Jacobo Sandoval-Gutiérrez",
+            "Rodrigo Vázquez López",
+            "Daniel Martinez-Vazquez"
+        ],
+        "keywords": [
+            "Internet of Robotic Things",
+            "sniffing attacks",
+            "spoofing attacks",
+            "ROS middleware",
+            "ThingSpeak",
+            "servo motor",
+            "6-DOF robotic arm",
+            "Industry 4.0"
+        ],
+        "primary_topic": "Robotics and Automated Systems",
+        "has_abstract": true,
+        "abstract": "The Internet of Robotic Things (IoRT) is a technology that looks for monitoring, operating, and maintaining the tasks of multiple robots through the cloud. However, using these robots in cyberspace has a risk and an inherent problem in cybersecurity. To analyze the implications of this technology, the objective was to design, operate and submit an IoRT system with the default configuration. The proposed methodology consisted of designing an IoRT architecture; implement three robotic platforms linked to the cloud, applying a sniffing and spoofing cyberattacks, assess the impacts, and propose solutions. The experiment used three prototypes: two servo motors, a 6-degree-of-freedom arm, and a workstation with a robot. Additionally, the tools of the experiment were a conventional computer, a Raspberry Pi microcomputer, the Robotic Operative System middleware, the Kali Linux distribution, and the ThingSpeak cloud service. The contributions of the work were three, first it was proven that four types of links are sufficient to homologate, and ensure the integrity, reliability, and availability in the operation of different types of robots. Also, it was possible the connection of these robots even though they are not designed to work on the internet through a slave-robot node link. Finally, a real list of the consequences was obtained, given the vulnerabilities and the attacks tested, as well as some recommendations.Keywords: Cybersecurity, IoRT, Industry 4.0., Common Vulnerabilities and Exposures, Cloud, ROS."
+    },
+    {
+        "id": "https://openalex.org/W3211947192",
+        "doi": "https://doi.org/10.14738/tmlai.85.9051",
+        "title": "WEB CIBERSECURITY - Danger of PHP Code Injection Vulnerability",
+        "year": 2020,
+        "authors": [
+            "Pedro Ramos Brandão"
+        ],
+        "keywords": [
+            "web application vulnerabilities",
+            "cybersecurity education",
+            "remote teaching",
+            "COVID-19 pandemic",
+            "learning assessment"
+        ],
+        "primary_topic": "Web Application Security Vulnerabilities",
+        "has_abstract": true,
+        "abstract": "This work demonstrates that the use of laboratories for the development of curricular work in the area of information technology exclusively supported by cloud computing technology does not decrease the level of learning and assessment objects on the part of students. This scenario arose due to the need to interrupt face-to-face classes in physical laboratories due to the COVID-19 Pandemic. The study had as universe a master's degree in Computer Science."
+    },
+    {
+        "id": "https://openalex.org/W4387059394",
+        "doi": "https://doi.org/10.53373/reds.2023.61.4.0134",
+        "title": "RISK MANAGEMENT AND CIBERSECURITY - BINOMIAL INSEPARABLE INTO THE DIGITALIZATION AREA",
+        "year": 2023,
+        "authors": [
+            "Lucreţia Mariana Constantinescu",
+            "Oana-Alexandra Sarcea"
+        ],
+        "keywords": [
+            "risk management",
+            "cybersecurity",
+            "digitalization",
+            "digital risk management",
+            "cyberattacks",
+            "data breaches",
+            "COVID-19 pandemic",
+            "organizational risk",
+            "brand reputation",
+            "consumer trust"
+        ],
+        "primary_topic": "Information and Cyber Security",
+        "has_abstract": true,
+        "abstract": "This research paper aims to address the significance of risk management and cybersecurity while exploring the interconnections between the adoption of digitalization and risk management.Additionally, the study seeks to highlight the accelerated pace of digitalization within organizations over the past three years, particularly during the COVID-19 pandemic, which has led to an increased number of organizational risks and cyberattacks.From a theoretical standpoint, this paper demonstrates the close relationship between risk management and digitalization, as the latter introduces both new risks and opportunities that necessitate effective risk management strategies.The transformative impact of digitalization on business operations, communication, and information exchange is evident, as it enables easier access and sharing of data on a global scale.However, this increased connectivity also amplifies the risk of cybersecurity threats, data breaches, and other digital risks.These risks can have profound implications for organizations, including financial repercussions, damage to brand reputation, and loss of customer trust.To explore the concepts of risk management and digitalization, this research utilizes bibliometric techniques to analyze existing literature.Structured reviews and content analysis are then employed to identify the connections between these two concepts.Furthermore, the relationship between risk management and digitalization is visualized using VOS Viewer software, a commonly used tool in academia for conducting network analysis of concepts.This paper also provides statistical data related to the analyzed concepts, offering valuable insights to researchers, scholars, managers, and entrepreneurs regarding the current digital risk management model and its potential impact.The findings of this study contribute to bridging the existing gap in the literature and provide a foundation for further exploration of the dynamic interplay between risk management, digitalization, and cybersecurity."
+    },
+    {
+        "id": "https://openalex.org/W3008217330",
+        "doi": null,
+        "title": "Ciberseguridad aplicada a la automoción: smart car cibersecurity",
+        "year": 2019,
+        "authors": [
+            "Pablo Escapa Gordón",
+            "Héctor Aláiz‐Moretón"
+        ],
+        "keywords": [
+            "cybersecurity",
+            "automotive industry",
+            "intelligent vehicles",
+            "connected vehicles",
+            "automotive cybersecurity"
+        ],
+        "primary_topic": "Vehicular Ad Hoc Networks (VANETs)",
+        "has_abstract": false,
+        "abstract": ""
+    },
+    {
+        "id": "https://openalex.org/W7165019031",
+        "doi": "https://doi.org/10.1007/978-3-031-99702-0_25",
+        "title": "Cibersecurity in Health Sector: Digital Maturity, Concerns and Mitigating Measures",
+        "year": 2026,
+        "authors": [
+            "Adriana Macedo",
+            "João Silva",
+            "Sandro Carvalho",
+            "Paulo Teixeira"
+        ],
+        "keywords": [
+            "cybersecurity",
+            "health sector",
+            "digital maturity",
+            "cyber threats",
+            "data protection",
+            "ransomware",
+            "incident response",
+            "employee training",
+            "regulatory compliance",
+            "security service providers",
+            "European healthcare"
+        ],
+        "primary_topic": "Information and Cyber Security",
+        "has_abstract": false,
+        "abstract": ""
+    },
+    {
+        "id": "https://openalex.org/W3208531762",
+        "doi": "https://doi.org/10.52959/2021535406",
+        "title": "Por que cibersecurity deveria ser prioridade para as empresas?",
+        "year": 2021,
+        "authors": [
+            "Stefanini Rafael",
+            "Leidivino Natal"
+        ],
+        "keywords": [
+            "cybersecurity",
+            "digital transformation",
+            "data protection",
+            "remote work",
+            "endpoint security",
+            "corporate security policy",
+            "COVID-19 pandemic"
+        ],
+        "primary_topic": "Information and Cyber Security",
+        "has_abstract": true,
+        "abstract": "Imagem: AdobeStock.comA transformação digital e o rápido avanço tecnológico dos últimos anos fizeram com que o setor de TI (tecnologia da informação) assumisse um papel estratégico nas organizações.Os dados utilizados para as tomadas de decisão se tornaram verdadeiros ativos e, consequentemente, precisaram ser gerenciados com mais eficiência.O ano de 2020 ficou marcado como um ano atípico.De potencial virada econômica, o ano foi palco de uma crise sanitária e política sem precedentes jamais vista, de alcance global.O mundo do trabalho teve que se reinventar às pressas e transformações que estavam em vias de desenvolvimento paulatino tiveram um speedup repentino, que fizeram muitas empresas redesenharem suas estratégias.O digital não é mais uma opção, um add-on ou um benefício da rotina.É a realidade de muitas empresas.Com as mudanças, as pessoas em casa sendo os novos targets a serem alcançados, os dados ganharam um lugar de protagonismo nas estratégias.O ritmo da transformação digital não foi acompanhado de proteção suficiente para um novo modelo de trabalho que tornou os dados das organizações mais vulneráveis, com acessos através de mais aparelhos móveis e conexões domésticas.A informação extrapolou o escritório e as organizações precisaram redesenhar suas políticas de segurança com o foco na proteção dos endpoints."
+    },
+    {
+        "id": "https://openalex.org/W7112851223",
+        "doi": null,
+        "title": "Business plan to create a cibersecurity services company fortaleza digital",
+        "year": 2024,
+        "authors": [
+            "Rojas Gómez, Diego Felipe"
+        ],
+        "keywords": [
+            "cybersecurity services",
+            "small and medium-sized enterprises",
+            "cyber risk mitigation",
+            "business plan",
+            "market analysis",
+            "financial feasibility",
+            "organizational structure",
+            "sustainability",
+            "Sustainable Development Goals",
+            "ethical business"
+        ],
+        "primary_topic": "Business Strategies and Innovation",
+        "has_abstract": true,
+        "abstract": "Fortaleza Digital es una empresa dedicada a minimizar los riesgos de ciberseguridad mediante la implementación correcta de los proyectos que vende a sus empresas cliente. Posterior a la identificación de las necesidades de dichas empresas como el déficit en conocimiento en seguridad de la información de sus usuarios, restricciones presupuestales que les impiden acceder a contratación con empresas de ciberseguridad de trayectoria y la escasez de recurso humano dentro de las áreas de tecnología, Fortaleza Digital creó soluciones a estas frustraciones a precios que se ajustan a los presupuestos de las empresas cliente con servicios diseñados específicamente para satisfacer el mercado local. El objetivo general que se desarrolló consistió en validar la viabilidad de lapuesta en marcha de Fortaleza Digital como una empresa que ofrece servicios de ciberseguridad para pymes en Colombia, evaluando su pertinencia en el mercado,estructura organizacional, sostenibilidad y rentabilidad. La metodología implementada inicia con la identificación de la naturaleza del negocio, posteriormente con el análisis del sector, investigación de mercado y los aspectos técnicos, organizacionales y financieros. Finalmente se aborda el enfoque hacia la sostenibilidad y las conclusiones. En la etapa de construcción del proyecto de creación de empresa, se resaltó el enfoque en el desarrollo sostenible para que Fortaleza Digital aporte al desarrollo económico adecuado de la sociedad colombiana de una manera respetuosa con el medio ambiente y siempre teniendo la ética como referente en sus decisiones. En cuanto al punto de vista de los inversionistas, los cuales son también interesados en el desarrollo de este proyecto, encuentran en Fortaleza Digital una oportunidad de obtener utilidades en el plazo de tres años de manera incremental que están muy por encima de las rentabilidades ofrecidas por los bancos en los depósitos a término fijo. Los objetivos y metas de desarrollo sostenible (ODS) están inmersos en cada uno de los capítulos, puesto que ellos hacen parte de un desarrollo integral del ejercicio de las empresas en el que las utilidades netas no son su única razón de ser sino también el beneficio de la sociedad."
+    },
+    {
+        "id": "https://openalex.org/W3148347297",
+        "doi": "https://doi.org/10.1109/cimps52057.2020.9390114",
+        "title": "Proposal of a Intelligent Agent for Management and Mitigation in Cibersecurity Risk for IoT Environments",
+        "year": 2020,
+        "authors": [
+            "Einar Jhordany",
+            "Jezreel Mejía Miranda"
+        ],
+        "keywords": [
+            "intelligent agents",
+            "cyber risk management",
+            "Internet of Things security",
+            "threat mitigation",
+            "ISO/IEC 27001",
+            "COBIT 5",
+            "information security controls",
+            "security decision-making"
+        ],
+        "primary_topic": "Information and Cyber Security",
+        "has_abstract": true,
+        "abstract": "Nowadays, the development and use of internet of things devices is constantly growing. In addition, the implementation of 5G networks as well as WIFI 6, helps its growth and use by organizations and individuals seeking to acquire these types of devices. This leads to the growth of cyber-attackers who are only interested in exposing or compromising an organization's assets through these devices. Therefore, this article presents the basis for proposing the development of an intelligent agent that is capable of responding to any computer attack on Internet devices used by organizations and/or individuals. The development of this agent will be based on security aspects that are indicated in ISO/IEC 27001 and the COBIT 5 for Information Security and Risk framework for threat management and mitigation. In addition, this agent will allow the management and mitigation of threats, facilitating the decision making and/or creation or improvement of the controls used in the organization before any security incident."
+    },
+    {
+        "id": "https://openalex.org/W2995921423",
+        "doi": null,
+        "title": "Cibersecurity. Aproximación para generar un modelo de pruebas en empresas",
+        "year": 2019,
+        "authors": [
+            "Rodrigo Quirino de Lima Barbosa"
+        ],
+        "keywords": [
+            "cybersecurity",
+            "testing model",
+            "information security assessment"
+        ],
+        "primary_topic": "Information and Cyber Security",
+        "has_abstract": false,
+        "abstract": ""
+    },
+    {
+        "id": "https://openalex.org/W7205208064",
+        "doi": null,
+        "title": "Colombian cibersecurity regulatory framework and its impact on the protection of critical cyber infrastructures: a proposal to strengthen CSIRTs.",
+        "year": 2025,
+        "authors": [
+            "Katherine Julieth Aguilar Mendieta"
+        ],
+        "keywords": [
+            "cybersecurity regulation",
+            "CSIRT",
+            "national cybersecurity policy",
+            "policy implementation gap",
+            "capability-based planning",
+            "Colombia"
+        ],
+        "primary_topic": "Cybersecurity and Cyber Warfare Studies",
+        "has_abstract": true,
+        "abstract": "La protección de Infraestructura Critica Cibernética es una función esencial del Estado con el fin de proporcionar bienestar a los ciudadanos, por lo tanto, este trabajo realiza un análisis de la normatividad colombina con el fin de identificar fortalezas y desafíos que el país enfrenta con las continuas amenazas que provienen del ciberespacio. A lo largo del documento, se resalta la importancia que tienen los CSIRT dentro de la estrategia nacional digital, debido a que constituyen herramientas claves para la interoperabilidad y cooperación de las diferentes iniciativas. El trabajo revisa instrumentos normativos como el CONPES 3701 de 2011, CONPES 3854 de 2016, CONPES 3975 de 2019, el Decreto 338 de 2022. Aunque estos esfuerzos normativos representan un avance importante por parte de Colombia en materia de ciberseguridad, persisten brechas importantes entre la formulación de políticas y su ejecución práctica. En este contexto, los Equipos de Respuesta ante Incidentes de Seguridad Informática (CSIRT) desempeñan un rol fundamental en el ecosistema de ciberseguridad, debido a que son herramientas estratégicas en la preparación, protección y respuesta de incidentes provenientes del ciberespacio. Por lo tanto, el trabajo plantea un modelo metodológico para orientar la construcción, evaluación y madurez de los CSIRT sectoriales, ofreciendo una hoja de ruta para su desarrollo institucional, basado en el planeamiento por capacidades (DOMPI) del sector defensa y el modelo NIST 2.0, con el fin de fortalecer la protección de ICC en Colombia."
+    },
+    {
+        "id": "https://openalex.org/W2725771826",
+        "doi": "https://doi.org/10.17141/urvio.20.2017.2563",
+        "title": "Internet, la nueva era del delito: ciberdelito, ciberterrorismo, legislación y ciberseguridad/ Internet, the new age of crime: cibercrime, ciberterrorism, legislation and cibersecurity",
+        "year": 2017,
+        "authors": [
+            "Vicente Pons Gamón"
+        ],
+        "keywords": [
+            "cybercrime",
+            "cyberterrorism",
+            "cyberspace",
+            "cybercrime legislation",
+            "cybersecurity",
+            "national cyber defense",
+            "international criminal law",
+            "Spanish criminal law",
+            "European Union law",
+            "counterterrorism strategy"
+        ],
+        "primary_topic": "Cybersecurity and Cyber Warfare Studies",
+        "has_abstract": true,
+        "abstract": "This article aims to analyze the view of different authors about emergence of cybercrime in the terrorism area (cyberterrorism) and the nations cyber-defense response. In a first time we study the birth of a new criminal space \"cyberspace\" and all its threats, in a second part we see the reaction that this phenomenon has provoked to nations and international organizations in order to determine and study all these crimes, methods and reactions, so as to be able to combat them from the view legal point (Spanish, European and internacional legislation) then finish, showing the strategic vision of states defense, studying as examples the lines of action used by Spain and Europe to counteract its destructive effect on today's society."
+    },
+    {
+        "id": "https://openalex.org/W3100266854",
+        "doi": null,
+        "title": "Enfoques políticos y normativos en el desarrollo y adopción de forma segura de los vehículos inteligentes. Pespectivas desde la ciberseguridad = Policy and regulatory approaches in the safely development and adoption of smart vehicles. Perspectives from cibersecurity",
+        "year": 2020,
+        "authors": [
+            "Berrueto Rodríguez",
+            "José Alberto"
+        ],
+        "keywords": [
+            "intelligent vehicles",
+            "connected vehicles",
+            "automotive cybersecurity",
+            "vehicle safety",
+            "automotive industry policy",
+            "regulatory framework",
+            "digital transformation",
+            "consumer protection",
+            "government role in technology adoption",
+            "emerging technologies"
+        ],
+        "primary_topic": "Digitalization, Law, and Regulation",
+        "has_abstract": true,
+        "abstract": "En el presente trabajo de investigación se abordan la industria automovilística, su evolución reciente y las perspectivas de desarrollo a partir de la convergencia de las tecnologías del automóvil y las de la información y la comunicación. Se presentan, las diferentes acciones que se promueven e implementan en el plano nacional e internacional en estos últimos años, para favorecer la adopción de los vehículos inteligentes. Se caracteriza la actividad de los gobiernos en un entorno de transformación digital, especificando las peculiaridades que tiene en el caso de los vehículos inteligentes. A su vez, se identifican las formas o enfoques políticos y normativos que garantizan el desarrollo y adopción de forma segura de los vehículos inteligentes; identificando aquellas que mejor responden a una realidad dinámica y que faciliten de forma flexible e innovadora, atender a las constantes necesidades en términos de ciberseguridad, protección de los consumidores y mantenimiento de la confianza en la utilización de esta como tecnología emergente y de transformación digital."
+    },
+    {
+        "id": "https://openalex.org/W3165496971",
+        "doi": null,
+        "title": "El efecto Orwell en la sociedad en red: ciberseguridad, régimen global de vigilancia social y derecho a la privacidad en el siglo XXI = The Orwell effect in the network society : cibersecurity, social surveillance global regime and right to privacy in the 21st century",
+        "year": 2020,
+        "authors": [
+            "Seefeldt Pessoa",
+            "João Luís Oliveira Pedro"
+        ],
+        "keywords": [
+            "network society",
+            "cybersecurity",
+            "social surveillance",
+            "right to privacy"
+        ],
+        "primary_topic": "Privacy, Security, and Data Protection",
+        "has_abstract": false,
+        "abstract": ""
+    }
+]

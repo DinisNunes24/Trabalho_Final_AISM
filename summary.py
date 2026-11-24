@@ -1,80 +1,106 @@
 import json
-from pydantic import BaseModel
+import os
 from ollama import Client
 
-client = Client(host="http://localhost:11434")
-# 1. Define the exact schema you want Ollama to return using Pydantic
+from harvest import build_output_filename, choose_topic, fetch_papers
 
-def _build_prompt(paper: dict) -> str:
+client = Client(host="http://localhost:11434")
+
+
+def _build_prompt(paper: dict, topic: str) -> str:
     title = paper.get("title") or "Unavailable"
     keywords = paper.get("keywords") or []
     keywords_text = ", ".join(keywords) if keywords else "Unavailable"
+    primary_topic = paper.get("primary_topic") or "Unavailable"
     abstract = paper.get("abstract") or "Unavailable"
 
     return f"""
-    You are an expert agricultural entomologist. You are filtering scientific papers for relevance to the pest Cryptoblabes gnidiella (honeydew moth) in the context of grape production, grapevine, and viticulture.
+You are a rigorous academic research analyst. Analyze the following scientific paper regarding its connection to the topic "{topic}".
 
-    You will be provided with properties of a scientific paper, including its title, keywords, and abstract, depending on availability.
-    Determine whether the paper is genuinely about the biology, control, distribution, or ecological impact of Cryptoblabes gnidiella in the context of grape production, grapevine, and viticulture.
+Explain clearly and concisely whether and how the paper relates to "{topic}" (for example: core focus, methods, applications, context, or lack of direct relevance), referencing evidence from the title, keywords, primary topic, or abstract.
 
-    TITLE:
-    {title}
+TOPIC UNDER EVALUATION:
+{topic}
 
-    KEYWORDS:
-    {keywords_text}
+TITLE:
+{title}
 
-    ABSTRACT:
-    {abstract}
+PRIMARY TOPIC:
+{primary_topic}
 
-    **CRITICAL** - You must output your final decision as a JSON object wrapped in triple backticks. The JSON must have exactly two keys: "is_relevant" (boolean) and "reason" (string).
-    """
+KEYWORDS:
+{keywords_text}
+
+ABSTRACT:
+{abstract}
+""".strip()
 
 
-def evaluate_papers(input_file="papers_dataset.json", output_file="evaluated_dataset.json", model_name="gemma-fullctx"):
-    # Load the dataset
+def evaluate_papers(
+    topic: str | None = None,
+    input_file: str | None = None,
+    output_file: str | None = None,
+    model_name: str = "gemma3:4b",
+    save_every: int = 25,
+    fetch_if_missing: bool = True,
+):
+    if not topic:
+        topic = choose_topic()
+    if not topic:
+        print("Nenhum tema selecionado. A terminar.")
+        return
+
+    if not input_file:
+        input_file = build_output_filename(topic, prefix="papers")
+
+    if not output_file:
+        output_file = build_output_filename(topic, prefix="evaluated")
+
+    if not os.path.exists(input_file):
+        if fetch_if_missing:
+            print(f"Ficheiro '{input_file}' não encontrado. A recolher artigos para '{topic}'...")
+            fetch_papers(query=topic, output_file=input_file, per_page=20, max_results=20)
+        else:
+            raise FileNotFoundError(f"Ficheiro de entrada não encontrado: {input_file}")
+
     with open(input_file, "r", encoding="utf-8") as f:
         dataset = json.load(f)
-        
-    print(f"Loaded {len(dataset)} papers. Starting evaluation...")
-    
-    # Process each paper
+
+    print(f"\nLoaded {len(dataset)} papers from '{input_file}'. Evaluating against topic: '{topic}' using {model_name}...")
+
     for index, paper in enumerate(dataset):
-        # if index >=10: break #for debug
-        print(f"[{index + 1}/{len(dataset)}] Evaluating: {paper['title'][:50]}...")
-        
-        prompt = _build_prompt(paper)
-        
+        title_preview = (paper.get("title") or "Untitled")[:50]
+        print(f"[{index + 1}/{len(dataset)}] Evaluating: {title_preview}...")
+
+        prompt = _build_prompt(paper, topic=topic)
+        paper["evaluated_topic"] = topic
+        paper["prompt_text"] = prompt
+
         try:
-            # Send the prompt to your local Ollama instance
-            # By passing our Pydantic model to the format parameter, Ollama guarantees valid JSON matching that schema.
             response = client.chat(
                 model=model_name,
-                messages=[{'role': 'user', 'content': prompt}],
-                options={'temperature': 0}  # Set temperature to 0 for maximum strictness/determinism
+                messages=[{"role": "user", "content": prompt}],
+                options={
+                    "temperature": 0,
+                    "num_ctx": 4096,
+                },
             )
-            
-            # The output is guaranteed to be a stringified JSON matching our Pydantic model
-            
-            
-            # Parse the JSON string directly into a Python dictionary
-            
-            
-            # Append the results directly to the paper record
-            
-            paper["prompt_text"] = prompt
-            
+
+            paper["reason"] = response.message.content.strip()
+
         except Exception as e:
             print(f"Error evaluating paper {paper.get('id')}: {e}")
-            
-            paper["prompt_text"] = prompt
+            paper["reason"] = f"Error: {e}"
 
-    # Save the updated dataset
+        if (index + 1) % save_every == 0:
+            with open(output_file, "w", encoding="utf-8") as f:
+                json.dump(dataset, f, indent=4, ensure_ascii=False)
+
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(dataset, f, indent=4, ensure_ascii=False)
-        
+
     print(f"\nFinished! Evaluated dataset saved to {output_file}")
-    
+
 
 if __name__ == "__main__":
-    # Make sure you have run `ollama run llama3.1` in your terminal first!
     evaluate_papers()
