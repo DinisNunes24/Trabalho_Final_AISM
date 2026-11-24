@@ -89,7 +89,36 @@ def suggest_related_topics(query: str, max_suggestions: int = 8):
     return [nome for _, nome in unique[:max_suggestions]]
 
 
-def fetch_papers(query: str, output_file: str = "papers_dataset.json", per_page: int = 20, max_results: int = 20):
+def choose_topic() -> str | None:
+    """
+    Pede um tema ao utilizador e opcionalmente permite escolher um tema sugerido.
+    """
+    print("=" * 60)
+    print("  Seleção de tema")
+    print("=" * 60)
+
+    query = input("\nDigite o tema que pretende pesquisar: ").strip()
+    if not query:
+        return None
+
+    related = suggest_related_topics(query)
+
+    if related:
+        print("\nQuer usar um dos temas sugeridos em vez do original?")
+        print("   (pressione Enter para manter o tema original)")
+        escolha = input("   Número do tema (ou Enter): ").strip()
+
+        if escolha.isdigit():
+            idx = int(escolha) - 1
+            if 0 <= idx < len(related):
+                query = related[idx]
+                print(f"\n→ Tema alterado para: '{query}'")
+
+    return query
+
+
+def fetch_papers(query: str, output_file: str = "papers_dataset.json",
+                 per_page: int = 20, max_results: int = 20):
     print(f"\n A pesquisar no OpenAlex: '{query}'...")
 
     pager = (
@@ -113,7 +142,7 @@ def fetch_papers(query: str, output_file: str = "papers_dataset.json", per_page:
 
     try:
         for page_num, page in enumerate(pager, start=1):
-            print(f"   Página {page_num}... ({len(page)} registos)")
+            print(f" ({len(page)} registos)")
 
             for work in page:
                 # Autores
@@ -137,7 +166,7 @@ def fetch_papers(query: str, output_file: str = "papers_dataset.json", per_page:
                             keywords.append(keyword_name)
                             all_keywords.append(keyword_name)
 
-                # Topic principal (se existir)
+                # Topic principal
                 primary_topic = None
                 if work.get("primary_topic"):
                     primary_topic = work["primary_topic"].get("display_name")
@@ -154,7 +183,6 @@ def fetch_papers(query: str, output_file: str = "papers_dataset.json", per_page:
                     "abstract": abstract_text,
                 })
 
-                # Limite de artigos
                 if len(dataset) >= max_results:
                     break
 
@@ -167,7 +195,6 @@ def fetch_papers(query: str, output_file: str = "papers_dataset.json", per_page:
                 json.dump(dataset, f, indent=4, ensure_ascii=False)
             print(f"\n Guardados {len(dataset)} registos em '{output_file}'.")
 
-            # Mostrar as keywords mais frequentes nos resultados
             if all_keywords:
                 print("\n Keywords mais frequentes nos resultados:")
                 for kw, count in Counter(all_keywords).most_common(8):
@@ -177,35 +204,15 @@ def fetch_papers(query: str, output_file: str = "papers_dataset.json", per_page:
 
 
 if __name__ == "__main__":
-    print("=" * 60)
-    print("  Pesquisa de artigos científicos no OpenAlex")
-    print("=" * 60)
+    topic = choose_topic()
 
-    # 1. Pedir o tema ao utilizador
-    query = input("\nDigite o tema que pretende pesquisar: ").strip()
-
-    if not query:
+    if not topic:
         print("Nenhum tema introduzido. A terminar.")
-        exit()
+    else:
+        # Guardar o tema usado para o summary.py poder lê-lo automaticamente
+        with open("last_topic.txt", "w", encoding="utf-8") as f:
+            f.write(topic)
 
-    # 2. Sugerir temas relacionados
-    related = suggest_related_topics(query)
-
-    # 3. Perguntar se o utilizador quer usar um dos temas sugeridos
-    if related:
-        print("\nQuer usar um dos temas sugeridos em vez do original?")
-        print("   (pressione Enter para manter o tema original)")
-        escolha = input("   Número do tema (ou Enter): ").strip()
-
-        if escolha.isdigit():
-            idx = int(escolha) - 1
-            if 0 <= idx < len(related):
-                query = related[idx]
-                print(f"\n→ Tema alterado para: '{query}'")
-
-    # 4. Definir nome do ficheiro de saída
-    safe_name = "".join(c if c.isalnum() or c in " _-" else "_" for c in query)[:50]
-    output_file = f"papers_{safe_name.strip().replace(' ', '_')}.json"
-
-    # 5. Executar a pesquisa (limitada a 20 artigos)
-    fetch_papers(query=query, output_file=output_file, per_page=20, max_results=20)
+        # Sempre grava no mesmo ficheiro fixo
+        fetch_papers(query=topic, output_file="papers_dataset.json",
+                     per_page=20, max_results=20)

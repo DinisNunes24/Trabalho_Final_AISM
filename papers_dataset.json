@@ -1,0 +1,460 @@
+[
+    {
+        "id": "https://openalex.org/W3039368862",
+        "doi": "https://doi.org/10.1007/s13735-020-00195-x",
+        "title": "A survey on instance segmentation: state of the art",
+        "year": 2020,
+        "authors": [
+            "Abdul Mueed Hafiz",
+            "Ghulam Mohiuddin Bhat"
+        ],
+        "keywords": [
+            "instance segmentation",
+            "object detection",
+            "semantic segmentation",
+            "bounding boxes",
+            "state of the art"
+        ],
+        "primary_topic": "Advanced Neural Network Applications",
+        "has_abstract": false,
+        "abstract": ""
+    },
+    {
+        "id": "https://openalex.org/W2551359113",
+        "doi": "https://doi.org/10.1016/j.mayocp.2016.08.022",
+        "title": "The State of the Art",
+        "year": 2016,
+        "authors": [
+            "Daniel P. Morin",
+            "Michael L. Bernard",
+            "Christopher A. Madias",
+            "Paul A. Rogers",
+            "Sudarone Thihalolipavan",
+            "N.A. Mark Estes"
+        ],
+        "keywords": [
+            "atrial fibrillation",
+            "risk factors",
+            "risk mitigation",
+            "pathophysiology",
+            "pharmacotherapy",
+            "non-pharmacological treatment",
+            "arrhythmia prevention"
+        ],
+        "primary_topic": "Atrial Fibrillation Management and Outcomes",
+        "has_abstract": false,
+        "abstract": ""
+    },
+    {
+        "id": "https://openalex.org/W2482182218",
+        "doi": "https://doi.org/10.1007/978-3-642-68874-4",
+        "title": "Mathematical Programming The State of the Art",
+        "year": 1983,
+        "authors": [
+            "Achim Bachem",
+            "Martin Grötschel",
+            "Bernhard Körte"
+        ],
+        "keywords": [
+            "mathematical programming",
+            "optimization",
+            "linear programming",
+            "nonlinear programming",
+            "integer programming",
+            "state of the art"
+        ],
+        "primary_topic": "Advanced Optimization Algorithms Research",
+        "has_abstract": false,
+        "abstract": ""
+    },
+    {
+        "id": "https://openalex.org/W4296471858",
+        "doi": "https://doi.org/10.1145/242223.242257",
+        "title": "Formal methods: state of the art and future directions",
+        "year": 1996,
+        "authors": [
+            "Edmund M. Clarke",
+            "Jeannette M. Wing"
+        ],
+        "keywords": [
+            "formal methods",
+            "specifications",
+            "verification",
+            "model checking",
+            "theorem proving",
+            "state of the art",
+            "future research directions"
+        ],
+        "primary_topic": "Formal Methods in Verification",
+        "has_abstract": true,
+        "abstract": "this report assesses the state of the art in specification and verification. For verification, we highlight advances in model checking and theorem proving. In the three sections on specification, model checking, and theorem proving, we explain what we mean by the general technique and briefly describe some successful case studies and well-known tools. The second part of this report outlines future directions in fundamental concepts, new methods and tools, integration of methods, and education and technology transfer. We close with summary remarks and pointers to resources for more information"
+    },
+    {
+        "id": "https://openalex.org/W2411164904",
+        "doi": "https://doi.org/10.1164/arrd.1983.128.3.552",
+        "title": "State of the Art",
+        "year": 1983,
+        "authors": [
+            "Robert M. Tate",
+            "John E. Repine"
+        ],
+        "keywords": [
+            "neutrophils",
+            "acute respiratory distress syndrome",
+            "neutrophil toxicity"
+        ],
+        "primary_topic": "Respiratory Support and Mechanisms",
+        "has_abstract": true,
+        "abstract": "Il est indiscutable que des neutrophiles s'accumulent dans les poumons des malades atteints de syndrome de detresse respiratoire des adultes mais cette observation n'est ni specifique ni diagnostique du syndrome. Malgre la presence de neutrophiles pouvant etre toxiques dans les poumons de ces malades, le role specifique, s'il en existe un, des neutrophiles dans ce syndrome de detresse reste a determiner"
+    },
+    {
+        "id": "https://openalex.org/W2157532610",
+        "doi": "https://doi.org/10.1016/j.dental.2010.10.020",
+        "title": "Resin composite—State of the art",
+        "year": 2010,
+        "authors": [
+            "Jack L. Ferracane"
+        ],
+        "keywords": [
+            "dental composites",
+            "mechanical properties",
+            "wear resistance",
+            "polishability",
+            "polymerization shrinkage",
+            "shrinkage stress",
+            "adhesion",
+            "self-adhesive composites",
+            "restorative dentistry",
+            "clinical longevity"
+        ],
+        "primary_topic": "Dental materials and restorations",
+        "has_abstract": false,
+        "abstract": ""
+    },
+    {
+        "id": "https://openalex.org/W1978805351",
+        "doi": "https://doi.org/10.2307/2006365",
+        "title": "The State of the Art in Numerical Analysis.",
+        "year": 1978,
+        "authors": [
+            "J. B.",
+            "Dirk Jacobs"
+        ],
+        "keywords": [
+            "numerical analysis",
+            "state of the art"
+        ],
+        "primary_topic": "Mathematical and Computational Methods",
+        "has_abstract": false,
+        "abstract": ""
+    },
+    {
+        "id": "https://openalex.org/W2094255768",
+        "doi": "https://doi.org/10.1016/j.ijinfomgt.2009.08.009",
+        "title": "Mobile marketing research: The-state-of-the-art",
+        "year": 2009,
+        "authors": [
+            "Kaan Varnalı",
+            "Ayşegül Toker"
+        ],
+        "keywords": [
+            "mobile marketing",
+            "mobile commerce",
+            "research classification",
+            "future research directions",
+            "state of the art"
+        ],
+        "primary_topic": "Digital Marketing and Social Media",
+        "has_abstract": false,
+        "abstract": ""
+    },
+    {
+        "id": "https://openalex.org/W1551770093",
+        "doi": null,
+        "title": "Language Acquisition: The State of the Art",
+        "year": 2009,
+        "authors": [
+            "Eric Wanner",
+            "Lila R. Gleitman"
+        ],
+        "keywords": [
+            "language acquisition",
+            "recursion",
+            "communication environment",
+            "grammatical categories",
+            "case categories",
+            "grammaticalization",
+            "gerund",
+            "semantic development",
+            "vocabulary development",
+            "lexical innovation",
+            "task specificity",
+            "speech perception",
+            "American Sign Language",
+            "child language acquisition"
+        ],
+        "primary_topic": "Language Development and Disorders",
+        "has_abstract": true,
+        "abstract": "List of contributors Preface Part I. The Logic of Language Acquisition: 1. Language acquisition: the state of the state of the art Lila R. Gleitman and Eric Wanner Part II. Preconditions for Language Acquisition: 2. The resilience of recursion: a study of a communication system developed without a conventional language model Susan Goldin-Meadow 3. Why short subjects are harder to find than long ones Charles Read and Peter Schreiber 4. On mechanisms of language acquisition: can features of the communicative environment account for development? Marilyn Shatz 5. Universal and particular in the acquisition of language Dan I. Slobin Part III. The Development of Grammar: 6. Functionalist approaches to grammar Elizabeth Bates and Brian MacWhinney 7. On what cases categories there are, why they are, and how they develop: an amalgam of a priori considerations, speculation and evidence from children Martin D. S. Braine and Judith A. Hardy 8. The child's construction of grammatical categories Michael Maratsos 9. The role of universals in the acquisition of gerunds Thomas Roeper 10. A principle theory for language acquisition Kenneth Wexler Part IV. Semantic and Lexical Development: 11. Reorganisational processes in lexical and syntactic development Melissa Bowerman 12. Semantic development: the state of the art Susan Carey 13. The young word maker: a case study of innovation in the child's lexicon Eve V. Clark Part V. Alternative Conceptions of Acquisition: 14. Some implications of the nonspecific bases of language T. G. Bever 15. Task specificity in language learning? Evidence from speech perception and American Sign Language Elissa L. Newport References Index."
+    },
+    {
+        "id": "https://openalex.org/W2806746626",
+        "doi": "https://doi.org/10.1109/tr.2018.2834476",
+        "title": "Fuzzing: State of the Art",
+        "year": 2018,
+        "authors": [
+            "Hongliang Liang",
+            "Xiaoxiao Pei",
+            "Xiaodong Jia",
+            "Wuwei Shen",
+            "Jian Zhang"
+        ],
+        "keywords": [
+            "fuzzing",
+            "software testing",
+            "software vulnerabilities",
+            "software defects",
+            "test data generation",
+            "fuzzing tools",
+            "software security",
+            "bug hunting"
+        ],
+        "primary_topic": "Software Testing and Debugging Techniques",
+        "has_abstract": true,
+        "abstract": "As one of the most popular software testing techniques, fuzzing can find a variety of weaknesses in a program, such as software bugs and vulnerabilities, by generating numerous test inputs. Due to its effectiveness, fuzzing is regarded as a valuable bug hunting method. In this paper, we present an overview of fuzzing that concentrates on its general process, as well as classifications, followed by detailed discussion of the key obstacles and some state-of-the-art technologies which aim to overcome or mitigate these obstacles. We further investigate and classify several widely used fuzzing tools. Our primary goal is to equip the stakeholder with a better understanding of fuzzing and the potential solutions for improving fuzzing methods in the spectrum of software testing and security. To inspire future research, we also predict some future directions with regard to fuzzing."
+    },
+    {
+        "id": "https://openalex.org/W2104354471",
+        "doi": "https://doi.org/10.1039/c4cs00228h",
+        "title": "Photoelectrochemical bioanalysis: the state of the art",
+        "year": 2015,
+        "authors": [
+            "Weiwei Zhao",
+            "Jing‐Juan Xu",
+            "Hong‐Yuan Chen"
+        ],
+        "keywords": [
+            "photoelectrochemical biosensing",
+            "photoelectrochemical immunoassay",
+            "cell detection",
+            "biological detection",
+            "photoelectrodes"
+        ],
+        "primary_topic": "Advanced biosensing and bioanalysis techniques",
+        "has_abstract": true,
+        "abstract": "The evolution of photoelectrochemical (PEC) bioanalysis has resulted in substantial progress in its analytical performance and biodetection applications. The aim of this review is to provide a panoramic snapshot of the state of the art in this dynamically developing field, with special emphasis on PEC DNA analysis, immunoassay, enzymatic biosensing and cell-related detection. The future prospects in this area are also evaluated and discussed. This work will serve as a useful source to inform the interested audience of the latest developments and applications in the field of PEC bioanalysis."
+    },
+    {
+        "id": "https://openalex.org/W2966284335",
+        "doi": "https://doi.org/10.1016/j.knosys.2020.106622",
+        "title": "AutoML: A survey of the state-of-the-art",
+        "year": 2020,
+        "authors": [
+            "Xin James He",
+            "Kaiyong Zhao",
+            "Xiaowen Chu"
+        ],
+        "keywords": [
+            "automated machine learning",
+            "neural architecture search",
+            "hyperparameter optimization",
+            "feature engineering",
+            "data preparation",
+            "one-shot NAS",
+            "deep learning pipeline"
+        ],
+        "primary_topic": "Machine Learning and Data Classification",
+        "has_abstract": false,
+        "abstract": ""
+    },
+    {
+        "id": "https://openalex.org/W1970987019",
+        "doi": "https://doi.org/10.1016/j.renene.2010.06.014",
+        "title": "Energy harvesting: State-of-the-art",
+        "year": 2010,
+        "authors": [
+            "Adnan Harb"
+        ],
+        "keywords": [
+            "energy harvesting",
+            "low-power systems",
+            "power conversion",
+            "power management",
+            "battery charging",
+            "vibration energy harvesting",
+            "thermal energy harvesting",
+            "RF energy harvesting",
+            "MEMS"
+        ],
+        "primary_topic": "Innovative Energy Harvesting Technologies",
+        "has_abstract": false,
+        "abstract": ""
+    },
+    {
+        "id": "https://openalex.org/W2161469100",
+        "doi": "https://doi.org/10.1016/s0010-0277(00)00152-9",
+        "title": "Objects and attention: the state of the art",
+        "year": 2001,
+        "authors": [
+            "Brian J. Scholl"
+        ],
+        "keywords": [
+            "object-based attention",
+            "selective attention",
+            "object individuation",
+            "perceptual grouping",
+            "reference frames",
+            "spatial location",
+            "visual features",
+            "dynamic motion",
+            "event perception",
+            "auditory attention",
+            "object concepts",
+            "infant cognition",
+            "cross-modal attention"
+        ],
+        "primary_topic": "Visual perception and processing mechanisms",
+        "has_abstract": false,
+        "abstract": ""
+    },
+    {
+        "id": "https://openalex.org/W2074473190",
+        "doi": "https://doi.org/10.1016/0920-4105(95)00051-8",
+        "title": "Drilling fluids: State of the art",
+        "year": 1996,
+        "authors": [
+            "Ryen Caenn",
+            "George Varos Chilingar"
+        ],
+        "keywords": [
+            "drilling fluids",
+            "polymer additives",
+            "extended reach drilling",
+            "horizontal drilling",
+            "oil-based mud",
+            "water-based drilling fluids"
+        ],
+        "primary_topic": "Drilling and Well Engineering",
+        "has_abstract": false,
+        "abstract": ""
+    },
+    {
+        "id": "https://openalex.org/W2585293115",
+        "doi": "https://doi.org/10.1016/j.cviu.2017.03.007",
+        "title": "Superpixels: An evaluation of the state-of-the-art",
+        "year": 2017,
+        "authors": [
+            "David Stutz",
+            "Alexander Hermans",
+            "Bastian Leibe"
+        ],
+        "keywords": [
+            "superpixels",
+            "superpixel segmentation",
+            "benchmark",
+            "algorithm comparison",
+            "connectivity",
+            "parameter optimization",
+            "evaluation metrics",
+            "noise robustness",
+            "blur robustness",
+            "affine transformation",
+            "visual quality",
+            "low-level vision"
+        ],
+        "primary_topic": "Medical Image Segmentation Techniques",
+        "has_abstract": false,
+        "abstract": ""
+    },
+    {
+        "id": "https://openalex.org/W1530897971",
+        "doi": "https://doi.org/10.1016/0141-0296(88)90033-8",
+        "title": "State-of-the-art review",
+        "year": 1988,
+        "authors": [
+            "T. T. Soong"
+        ],
+        "keywords": [
+            "active structural control",
+            "civil engineering structures",
+            "control algorithm design",
+            "control system design",
+            "vibration control",
+            "structural health monitoring"
+        ],
+        "primary_topic": "Vibration Control and Rheological Fluids",
+        "has_abstract": false,
+        "abstract": ""
+    },
+    {
+        "id": "https://openalex.org/W2031454541",
+        "doi": "https://doi.org/10.1109/tpami.2011.155",
+        "title": "Pedestrian Detection: An Evaluation of the State of the Art",
+        "year": 2011,
+        "authors": [
+            "Piotr Dollár",
+            "Christian Wojek",
+            "Bernt Schiele",
+            "Pietro Perona"
+        ],
+        "keywords": [
+            "pedestrian detection",
+            "monocular images",
+            "benchmark dataset",
+            "occlusion",
+            "scale variation",
+            "evaluation methodology",
+            "urban scenes",
+            "performance comparison"
+        ],
+        "primary_topic": "Advanced Neural Network Applications",
+        "has_abstract": true,
+        "abstract": "Pedestrian detection is a key problem in computer vision, with several applications that have the potential to positively impact quality of life. In recent years, the number of approaches to detecting pedestrians in monocular images has grown steadily. However, multiple data sets and widely varying evaluation protocols are used, making direct comparisons difficult. To address these shortcomings, we perform an extensive evaluation of the state of the art in a unified framework. We make three primary contributions: 1) We put together a large, well-annotated, and realistic monocular pedestrian detection data set and study the statistics of the size, position, and occlusion patterns of pedestrians in urban scenes, 2) we propose a refined per-frame evaluation methodology that allows us to carry out probing and informative comparisons, including measuring performance in relation to scale and occlusion, and 3) we evaluate the performance of sixteen pretrained state-of-the-art detectors across six data sets. Our study allows us to assess the state of the art and provides a framework for gauging future efforts. Our experiments show that despite significant progress, performance still has much room for improvement. In particular, detection is disappointing at low resolutions and for partially occluded pedestrians."
+    },
+    {
+        "id": "https://openalex.org/W2132782512",
+        "doi": "https://doi.org/10.1002/for.3980040103",
+        "title": "Exponential smoothing: The state of the art",
+        "year": 1985,
+        "authors": [
+            "Everette S. Gardner"
+        ],
+        "keywords": [
+            "exponential smoothing",
+            "Holt-Winters exponential smoothing",
+            "seasonal adjustment",
+            "forecast initialization",
+            "parameter selection",
+            "adaptive smoothing parameter",
+            "structural breaks",
+            "two-stage forecasting",
+            "time series forecasting"
+        ],
+        "primary_topic": "Forecasting Techniques and Applications",
+        "has_abstract": true,
+        "abstract": "This paper is a critical review of exponential smoothing since the original work by Brown and Holt in the 1950s. Exponential smoothing is based on a pragmatic approach to forecasting which is shared in this review. The aim is to develop state‐of‐the‐art guidelines for application of the exponential smoothing methodology. The first part of the paper discusses the class of relatively simple models which rely on the Holt‐Winters procedure for seasonal adjustment of the data. Next, we review general exponential smoothing (GES), which uses Fourier functions of time to model seasonality. The research is reviewed according to the following questions. What are the useful properties of these models? What parameters should be used? How should the models be initialized? After the review of model‐building, we turn to problems in the maintenance of forecasting systems based on exponential smoothing. Topics in the maintenance area include the use of quality control models to detect bias in the forecast errors, adaptive parameters to improve the response to structural changes in the time series, and two‐stage forecasting, whereby we use a model of the errors or some other model of the data to improve our initial forecasts. Some of the major conclusions: the parameter ranges and starting values typically used in practice are arbitrary and may detract from accuracy. The empirical evidence favours Holt's model for trends over that of Brown. A linear trend should be damped at long horizons. The empirical evidence favours the Holt‐Winters approach to seasonal data over GES. It is difficult to justify GES in standard form–the equivalent ARIMA model is simpler and more efficient. The cumulative sum of the errors appears to be the most practical forecast monitoring device. There is no evidence that adaptive parameters improve forecast accuracy. In fact, the reverse may be true."
+    },
+    {
+        "id": "https://openalex.org/W3161970973",
+        "doi": "https://doi.org/10.1016/j.jii.2021.100224",
+        "title": "Study on artificial intelligence: The state of the art and future prospects",
+        "year": 2021,
+        "authors": [
+            "Caiming Zhang",
+            "Yang Lu"
+        ],
+        "keywords": [
+            "artificial intelligence",
+            "state of the art",
+            "future prospects",
+            "AI technologies",
+            "artificial intelligence applications",
+            "information and communication technologies",
+            "Internet of Things",
+            "blockchain"
+        ],
+        "primary_topic": "Artificial Intelligence Applications",
+        "has_abstract": false,
+        "abstract": ""
+    }
+]

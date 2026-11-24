@@ -212,10 +212,10 @@ def run_gap_agent(
     input_file: str,
     output_json: str = "research_gaps_ranked.json",
     output_md: str = "research_gaps_report.md",
-    model_name: str = "gemma3:4b",
+    model_name: str = "gemma4:12b",
     reduce_model_name: str | None = None,
-    num_ctx: int = 4096,
-    batch_size: int = 20,
+    num_ctx: int = 8192,
+    batch_size: int = 5,
 ) -> dict[str, Any]:
     reduce_model = reduce_model_name or model_name
 
@@ -381,8 +381,8 @@ if __name__ == "__main__":
         input_file="evaluated_dataset.json",
         output_json="research_gaps_ranked.json",
         output_md="research_gaps_report.md",
-        model_name="gemma3:4b",
+        model_name="gemma4:12b",
         reduce_model_name=None,
-        num_ctx=4096,
-        batch_size=20,
+        num_ctx=8192,
+        batch_size=5,
     )
