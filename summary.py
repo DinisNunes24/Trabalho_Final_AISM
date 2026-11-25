@@ -28,11 +28,12 @@ def _build_prompt(paper: dict, topic: str) -> str:
     abstract = paper.get("abstract") or "Unavailable"
 
     return f"""
-You are a rigorous academic research analyst. Analyze the following scientific paper regarding its connection to the topic "{topic}".
 
-Explain clearly and concisely whether and how the paper relates to "{topic}" (for example: core focus, methods, applications, context, or lack of direct relevance), referencing evidence from the title, keywords, primary topic, or abstract.
+És um analista rigoroso de investigação académica. Analisa o seguinte artigo científico relativamente à sua relação com o tema "{topic}".
 
-TOPIC UNDER EVALUATION:
+Explica de forma clara e concisa se, e de que forma, o artigo está relacionado com o tema "{topic}" (por exemplo: foco principal, métodos, aplicações, contexto ou ausência de relevância direta), fundamentando a tua análise com evidências retiradas do título, das palavras-chave, do tema principal ou do resumo (abstract).
+
+TEMA EM AVALIAÇÃO
 {topic}
 
 TITLE:
@@ -110,7 +111,7 @@ def evaluate_papers(
             paper["reason"] = response.message.content.strip()
 
         except Exception as e:
-            print(f"Error evaluating paper {paper.get('id')}: {e}")
+            print(f"Erro ao avaliar {paper.get('id')}: {e}")
             paper["reason"] = f"Error: {e}"
 
         # Guardar periodicamente
@@ -123,7 +124,7 @@ def evaluate_papers(
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(dataset, f, indent=4, ensure_ascii=False)
 
-    print(f"\nFinished! Evaluated dataset saved to {output_file}")
+    print(f"\nAcabado! Evaluated dataset salavdo para {output_file}")
 
 
 if __name__ == "__main__":

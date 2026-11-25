@@ -1,3 +1,4 @@
+
 import json
 import re
 from collections import defaultdict
@@ -17,12 +18,12 @@ GapCategory = Literal[
 
 class GapItem(BaseModel):
     category: GapCategory = Field(
-        description="One of: open_problem, untested_combination, missing_evaluation, contradiction"
+        description="Uma das seguintes categorias: open_problem, untested_combination, missing_evaluation, contradiction"
     )
     title: str
     description: str
     supporting_ids: list[str] = Field(
-        description="Exact OpenAlex IDs or DOIs from the provided records that support this gap"
+        description="IDs exatos do OpenAlex ou DOIs dos registos fornecidos que sustentam esta lacuna de investigação"
     )
 
 
@@ -78,7 +79,7 @@ def _compact_record(paper: dict[str, Any]) -> dict[str, Any]:
     record: dict[str, Any] = {
         "id_or_doi": ids,
         "primary_id": primary_id,
-        "title": (paper.get("title") or "Untitled").strip(),
+        "title": (paper.get("title") or "Sem título").strip(),
         "year": paper.get("year") or paper.get("publication_year"),
         "keywords": keywords[:8],
     }
@@ -102,20 +103,20 @@ def _group_by_theme(data: Any) -> dict[str, list[dict[str, Any]]]:
             if isinstance(papers, list):
                 for p in papers:
                     if isinstance(p, dict):
-                        grouped[str(theme).strip() or "General"].append(p)
+                        grouped[str(theme).strip() or "Geral"].append(p)
         return dict(grouped)
 
     if isinstance(data, list):
         for paper in data:
             if not isinstance(paper, dict):
                 continue
-            theme = paper.get("theme") or paper.get("topic") or "General"
+            theme = paper.get("theme") or paper.get("topic") or "Geral"
             if isinstance(theme, list):
-                theme = theme[0] if theme else "General"
-            grouped[str(theme).strip() or "General"].append(paper)
+                theme = theme[0] if theme else "Geral"
+            grouped[str(theme).strip() or "Geral"].append(paper)
         return dict(grouped)
 
-    raise ValueError("Input JSON must be a list of paper dicts or a dict mapping theme -> list of papers.")
+    raise ValueError("O JSON de entrada deve ser uma lista de artigos ou um dicionário que associe temas a listas de artigos.")
 
 
 def _chunk_list(items: list[Any], chunk_size: int) -> list[list[Any]]:
@@ -133,19 +134,19 @@ def _build_map_prompt(
     allowed_json = json.dumps(allowed_ids, ensure_ascii=False)
 
     return f"""
-You are a rigorous research gap analysis agent for the theme: "{theme}".
-Analyze ONLY the compact paper records below (full abstracts are intentionally omitted to save context).
+És um agente rigoroso de identificação de lacunas de investigação para o tema: "{theme}".
+Analisa APENAS os registos resumidos dos artigos apresentados abaixo (os resumos completos foram intencionalmente omitidos para reduzir o contexto).
 
-Identify research gaps across these four categories:
-1. open_problem: Problems explicitly or implicitly left open across multiple papers.
-2. untested_combination: Combinations of methods, attacks, defenses, treatments, crops, or conditions nobody in these records has tried together.
-3. missing_evaluation: Missing evaluations (e.g., no benchmark, no real-world/field data, only one model family, lack of baselines or ablation).
-4. contradiction: Direct contradictions or conflicting findings/claims between papers.
+Identifica lacunas de investigação nas seguintes quatro categorias:
+1. open_problem: Problemas que permanecem por resolver, de forma explícita ou implícita, em vários artigos.
+2. untested_combination: Combinações de métodos, abordagens, defesas, tratamentos, culturas ou condições que ainda não foram testadas em conjunto nos artigos fornecidos.
+3. missing_evaluation: Avaliações em falta (por exemplo, ausência de benchmarks, dados reais ou de campo, utilização de apenas uma família de modelos, falta de métodos de comparação ou estudos de ablação).
+4. contradiction: Contradições diretas ou resultados e conclusões divergentes entre artigos.
 
-STRICT GROUNDING RULE:
-- Every gap MUST cite at least one supporting ID or DOI from ALLOWED_IDS.
-- Copy supporting IDs/DOIs verbatim from ALLOWED_IDS.
-- If a claim has no supporting ID in ALLOWED_IDS, DO NOT include it. Do not invent papers or IDs.
+REGRA ESTRITA DE FUNDAMENTAÇÃO:
+- Cada lacuna DEVE incluir pelo menos um ID ou DOI de suporte presente em ALLOWED_IDS.
+- Copia os IDs/DOIs exatamente como aparecem em ALLOWED_IDS.
+- Se uma afirmação não tiver um ID de suporte em ALLOWED_IDS, NÃO a incluas. Não inventes artigos nem identificadores.
 
 ALLOWED_IDS:
 {allowed_json}
@@ -191,14 +192,15 @@ def _build_reduce_prompt(
     allowed_json = json.dumps(all_valid_ids, ensure_ascii=False)
 
     return f"""
-You are a senior research strategist performing a final REDUCE across all themes.
-Below are grounded research gaps per theme. Each gap already has verified supporting IDs/DOIs.
+És um investigador sénior responsável pela análise final e consolidação (REDUCE) das lacunas de investigação identificadas em todos os temas.
 
-Task:
-Produce a single ranked list of the most important, concrete research gaps across all themes (ordered from highest priority/impact to lowest).
-- Merge near-duplicate gaps across themes when appropriate, combining their themes and supporting_ids.
-- Every ranked gap MUST include at least one supporting ID from ALLOWED_IDS.
-- Base your rationale strictly on the provided theme gaps and cited IDs; do not invent new IDs or unsupported claims.
+Abaixo encontram-se as lacunas de investigação fundamentadas para cada tema. Cada lacuna já possui IDs/DOIs de suporte verificados.
+
+Tarefa:
+Produz uma única lista ordenada das lacunas de investigação mais importantes e concretas, considerando todos os temas, desde a maior prioridade/impacto até à menor.
+- Junta lacunas semelhantes ou praticamente duplicadas entre diferentes temas, sempre que apropriado, combinando os respetivos temas e supporting_ids.
+- Cada lacuna classificada DEVE incluir pelo menos um ID de suporte presente em ALLOWED_IDS.
+- Fundamenta a justificação exclusivamente nas lacunas identificadas por tema e nos respetivos IDs. Não inventes novos IDs nem afirmações sem suporte.
 
 ALLOWED_IDS:
 {allowed_json}
@@ -236,10 +238,10 @@ def run_gap_agent(
                     all_valid_id_map[norm] = pid
 
         allowed_ids = list(theme_id_map.values())
-        print(f"[MAP] Theme '{theme}': {len(papers)} papers, {len(allowed_ids)} valid IDs/DOIs.")
+        print(f"[MAP] Tema '{theme}': {len(papers)} artigos, {len(allowed_ids)} IDs/DOIs válidos.")
 
         if not allowed_ids:
-            print(f"  -> Skipping theme '{theme}': no valid OpenAlex ID or DOI found.")
+            print(f"  -> A ignorar o tema '{theme}': não foram encontrados IDs válidos do OpenAlex ou DOIs.")
             per_theme_gaps[theme] = []
             continue
 
@@ -280,11 +282,11 @@ def run_gap_agent(
                     theme_collected.append(g)
 
                 print(
-                    f"  -> Batch {batch_idx}/{len(batches)}: kept {len(grounded)} grounded gaps "
-                    f"(from {len(parsed.gaps)} raw)."
+                    f"  -> Lote {batch_idx}/{len(batches)}: {len(grounded)} lacunas fundamentadas "
+                    f"aceites (de {len(parsed.gaps)} identificadas inicialmente)."
                 )
             except Exception as e:
-                print(f"  -> Error in theme '{theme}' (batch {batch_idx}/{len(batches)}): {e}")
+                print(f"  -> Erro no tema '{theme}' (lote {batch_idx}/{len(batches)}): {e}")
 
         per_theme_gaps[theme] = theme_collected
 
@@ -294,8 +296,8 @@ def run_gap_agent(
     total_grounded = sum(len(v) for v in per_theme_gaps.values())
     if total_grounded > 0:
         print(
-            f"\n[REDUCE] Ranking {total_grounded} grounded gaps across {len(per_theme_gaps)} themes "
-            f"using '{reduce_model}'..."
+            f"\n[REDUCE] A ordenar {total_grounded} lacunas fundamentadas em {len(per_theme_gaps)} temas "
+            f"utilizando o modelo '{reduce_model}'..."
         )
         reduce_prompt = _build_reduce_prompt(per_theme_gaps, all_allowed_list)
         try:
@@ -328,7 +330,7 @@ def run_gap_agent(
                         }
                     )
         except Exception as e:
-            print(f"[REDUCE] Error: {e}")
+            print(f"[REDUCE] Erro: {e}")
 
     result_payload = {
         "map_model": model_name,
@@ -343,28 +345,28 @@ def run_gap_agent(
         json.dump(result_payload, f, indent=2, ensure_ascii=False)
 
     md_lines = [
-        "# Ranked Research Gaps Report",
+        "# Relatório de Lacunas de Investigação Classificadas",
         "",
-        f"- **Map Model:** `{model_name}`",
-        f"- **Reduce Model:** `{reduce_model}`",
-        f"- **Themes analyzed:** {len(grouped_papers)}",
-        f"- **Grounded gaps before reduce:** {total_grounded}",
-        f"- **Final ranked gaps:** {len(final_ranked)}",
+        f"- **Modelo de identificação:** `{model_name}`",
+        f"- **Modelo de consolidação:** `{reduce_model}`",
+        f"- **Temas analisados:** {len(grouped_papers)}",
+        f"- **Lacunas fundamentadas antes da consolidação:** {total_grounded}",
+        f"- **Lacunas finais classificadas:** {len(final_ranked)}",
         "",
-        "## Ranked Research Gaps",
+        "## Lacunas de Investigação Classificadas",
         "",
     ]
 
     for gap in final_ranked:
-        themes_str = ", ".join(gap["themes"]) if gap["themes"] else "General"
+        themes_str = ", ".join(gap["themes"]) if gap["themes"] else "Geral"
         refs_str = ", ".join(f"`{rid}`" for rid in gap["supporting_ids"])
         md_lines.extend(
             [
                 f"### {gap['rank']}. {gap['title']}",
-                f"- **Category:** `{gap['category']}`",
-                f"- **Themes:** {themes_str}",
-                f"- **Supporting Papers (ID / DOI):** {refs_str}",
-                f"- **Rationale:** {gap['rationale']}",
+                f"- **Categoria:** `{gap['category']}`",
+                f"- **Temas:** {themes_str}",
+                f"- **Artigos de suporte (ID / DOI):** {refs_str}",
+                f"- **Justificação:** {gap['rationale']}",
                 "",
             ]
         )
@@ -372,7 +374,7 @@ def run_gap_agent(
     with open(output_md, "w", encoding="utf-8") as f:
         f.write("\n".join(md_lines))
 
-    print(f"\nSaved JSON to {output_json} and Markdown report to {output_md}")
+    print(f"\nFicheiros guardados: {output_json} e {output_md}")
     return result_payload
 
 
